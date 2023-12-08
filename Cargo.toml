@@ -1,0 +1,43 @@
+[package]
+name = "mailhook"
+version = "0.1.3"
+edition = "2021"
+license = "Apache-2.0"
+repository = "https://github.com/3TiSite/mailhook.git"
+homepage = "https://github.com/3TiSite/mailhook/tree/main"
+description = "mail webhook to webpush"
+
+[dependencies]
+aerr = "0.1.6"
+anyhow = "1.0.75"
+axum = { version = "0.7.2", features = ["tracing"] }
+dotenv = "0.15.0"
+genv = "0.1.3"
+lazy_static = "1.4.0"
+loginit = "0.1.4"
+serde = { version = "1.0.193", features = ["derive"] }
+sonic-rs = "0.2.5"
+static_init = { version = "1.0.3", features = ["lock_statistics", "parking_lot", "parking_lot_core"] }
+tokio = { version = "1.34.0", features = [
+  "macros",
+  "rt",
+  "rt-multi-thread",
+  "time",
+  "sync"
+] }
+tracing = "0.1.40"
+wxpush = "0.1.4"
+
+[profile.release]
+lto = true
+opt-level = 3
+incremental = true
+codegen-units = 1
+overflow-checks = false
+panic = 'abort'
+debug-assertions = false
+strip = true
+
+[target.x86_64-unknown-linux-gnu]
+linker = "clang"
+rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]

@@ -4,12 +4,12 @@
 
 ## 代码库
 
-* [github](https://github.com/3TiSite/mailhook)
+* [GITHUB](https://github.com/3TiSite/mailhook)
 * [开放原子](https://atomgit.com/3ti/mailhook)
 
 ## 环境变量
 
-参考 ./.env.example 配置环境变量
+参考 [.env.example](./.env.example) 配置环境变量
 
 ```dotenv
 WARN_URL=https://groups.google.com/your_group
@@ -30,6 +30,10 @@ RUST_LOG=debug,supervisor=warn,hyper=warn,rustls=warn,h2=warn,tower=warn,reqwest
 注册 [wxpusher](https://wxpusher.zjiecode.com)，创建频道关注微信公众号 (提醒效果如下图)。
 
 ![](https://i-01.eu.org/2023/12/eCca5i_.webp)
+
+wxpusher 会生成一个二维码图片链接，扫描关注即可收到提醒。
+
+单个微信用户，每天最多接收 2000 条消息，请合理安排发送频率。
 
 推荐安装 [WxPusher Chrome 插件](https://github.com/wxpusher/wxpusher-chrome-extensions)，开着浏览器即可收到推送消息。
 
@@ -55,7 +59,7 @@ Google Cloud Run 免费配额如下，足够用了：
 
 注册 [proxiedmail.com](https://proxiedmail.com)
 
-建议直接转发到 google group 方便查看。
+建议直接转发到 [Google Groups](https://groups.google.com) 方便查看。
 
 配置收到邮件的 [webhook](https://proxiedmail.com/en/webhook-on-email) (这个页面需要**退出**登录才能访问)
 

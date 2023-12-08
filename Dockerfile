@@ -34,8 +34,8 @@ cargo build \
 mv out/* m &&\
 ./cpso.sh m
 
-FROM ubuntu
-# FROM scratch
+# FROM ubuntu
+FROM scratch
 
 ENV LD_LIBRARY_PATH=/lib
 COPY --from=build /so/ lib/
